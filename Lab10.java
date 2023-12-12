@@ -158,9 +158,7 @@ public class Lab10 {
       continue;
       
       boolean check = true;
-      
-      
-      
+
       for (int j = 2; j * j <= i; j++) {
       
       if (i % j == 0) {
@@ -169,12 +167,7 @@ public class Lab10 {
       
       break;
       
-      } else {
-      
-      
-      
       }
-      
       }
       
       if (check == true) {
@@ -183,18 +176,11 @@ public class Lab10 {
       
       }
       
-      else {}
-      
       }
-      
-      
-      
       System.out.println("There are: " + counter + " primes between 0 and "
       + n);
       
       }
-      
-      
       
       public static void Q4() {
       
