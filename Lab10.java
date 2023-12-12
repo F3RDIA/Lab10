@@ -11,9 +11,9 @@ public class Lab10 {
 
         //Q2();
 
-        Q3();
+        //Q3();
 
-        // Q4();
+         Q4();
 
         scan.close();
         
@@ -186,157 +186,89 @@ public class Lab10 {
       
       Random rng = new Random();
       
+      String input;
       
-      
-      String next;
-      
-      System.out.
-      println("Q4: Let's play a game. Type \"A\" to attack, \"B\" to buff your next attack. Kill the enemy to win!"
-      );
-      
-      System.out.
-      println("Q4: You must roll higher than the enemy armor class (12) to hit. Roll 20 for a critical hit!"
-      );
-      
+      System.out.println("Q4: Let's play a game. Type \"A\" to attack, \"B\" to buff your next attack. Kill the enemy to win!");
+      System.out.println("Q4: You must roll higher than the enemy armor class (12) to hit. Roll 20 for a critical hit!");
       System.out.println("Q4: Your damage is 2-16 (2d8)");
       
-      
-      
       int enemyHP = 100;
-      
       int a = 0;
       
-      
-      
-      boolean check = false;
+      boolean buffCheck = false;
       
       while (true) {
       
-      
-      
       boolean doAttack = false;
-      
       boolean check2 = false;
       
       while (!check2) {
       
-      next = scan.nextLine();
-      
+      input = scan.nextLine();
       check2 = true;
+
+      switch (input) {
       
-      switch (next) {
-      
-      case "A", "a":
-      
-      doAttack = true;
-      
-      break;
-      
-      case "B", "b":
-      
-      check = true;
-      
-      
-      System.out.println("Buffing! +5 to your next attack roll and damage");
-      
-      break;
-      
-      default:
-      
-      System.out.println("Invalid input");
-      
-      check2 = false;
-      
+        case "A", "a":
+            doAttack = true;
+            break;
+        case "B", "b":
+            buffCheck = true;
+            System.out.println("Buffing! +5 to your next attack roll and damage");
+            break;
+        default:
+            System.out.println("Invalid input");
+            check2 = false;
+        }
       }
-      
-      }
-      
-      
-      
       if (doAttack) {
-      
       a++;
       
       int attackRoll = rng.nextInt(20) + 1;
-      
       int damage = 0;
-      
       System.out.print("You rolled: " + attackRoll);
       
-      if(check) {
-      
+      if(buffCheck) {
       attackRoll += 5;
-      
       System.out.print(" + 5 (buff active)\n");
       
       } else {
-      
       System.out.println();
-      
       }
-      
       if (attackRoll >= 12) {
-      
       damage = rng.nextInt(8) + 1;
-      
       damage += rng.nextInt(8) + 1;
       
-      if(check) {
-      
+      if(buffCheck) {
       damage += 5;
-      
       }
       
-      if (attackRoll == 20 || (check && attackRoll == 20 + 5))
+      if (attackRoll == 20 || (buffCheck && attackRoll == 20 + 5))
       {
       
       damage *= 2;
-      
       System.out.print("Critical hit! ");
-      
       }
-      
       System.out.print("You dealt " + damage + " damage");
-      
-      if(check) {
+      if(buffCheck) {
       
       System.out.print(" (buffed attack)");
-      
       }
-      
       enemyHP -= damage;
-      
       System.out.println("\nEnemy HP: " + Math.max(0,
       enemyHP));
-      
-      
-      
       } else {
       
       System.out.println("Miss");
-      
       }
-      
-      
-      
-      check = false;
+      buffCheck = false;
       
       if (enemyHP <= 0) {
-      
       System.out.println("Enemy died in " + a + " turns");
-      
       scan.close();
-      
       return;
-      
       }
-      
-      }
-      
-      
-      
-      }
-      
-      }
-     
+    }   
+    } 
+}
 }
