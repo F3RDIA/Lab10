@@ -40,7 +40,7 @@ public class Lab10 {
 
                 System.out.println("The circumference of the square is: " + length_A * 4);
 
-                System.out.println("The area of the square is: " + length_A * length_A);
+                System.out.println("The area of the square is: " + Math.pow(length_A, 2));
 
             } else if (input.equals("rectangle")) {
 
@@ -52,7 +52,7 @@ public class Lab10 {
 
                 length_B = Double.parseDouble(scan.nextLine());
 
-                System.out.println("The circumference of the rectangle is: " + (2 * length_A + 2 * length_B));
+                System.out.println("The circumference of the rectangle is: " + (2 * (length_A + length_B)));
 
                 System.out.println("The area of the rectangle is: " + (length_A * length_B));
 
@@ -63,7 +63,7 @@ public class Lab10 {
 
                 System.out.println("The circumference of the circle is: " + (Math.PI * length_A * 2));
 
-                System.out.println("The area of the circle is: " + (Math.PI * length_A * length_A));
+                System.out.println("The area of the circle is: " + (Math.PI * Math.pow(length_A, 2)));
             }
         }
     }
