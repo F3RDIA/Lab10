@@ -16,6 +16,7 @@ public class Lab10 {
         // Q4();
 
         scan.close();
+        //working of laptop comment
 
     }
 
