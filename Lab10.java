@@ -200,12 +200,12 @@ public class Lab10 {
       while (true) {
       
       boolean doAttack = false;
-      boolean check2 = false;
+      boolean inputGiven = false;
       
-      while (!check2) {
+      while (!inputGiven) {
       
       input = scan.nextLine();
-      check2 = true;
+      inputGiven = true;
 
       switch (input) {
       
@@ -218,7 +218,7 @@ public class Lab10 {
             break;
         default:
             System.out.println("Invalid input");
-            check2 = false;
+            inputGiven = false;
         }
       }
       if (doAttack) {
@@ -251,7 +251,6 @@ public class Lab10 {
       }
       System.out.print("You dealt " + damage + " damage");
       if(buffCheck) {
-      
       System.out.print(" (buffed attack)");
       }
       enemyHP -= damage;
